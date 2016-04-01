@@ -1,0 +1,19 @@
+{
+  "name": "simon-game-react-flux",
+  "version": "1.0.0",
+  "description": "Simon Implementation in React and Flux",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klugjo/simon-game-react-flux.git"
+  },
+  "author": "Klughertz Jonathan <klughertz.j@gmail.com> (http://klugjo.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/klugjo/simon-game-react-flux/issues"
+  },
+  "homepage": "https://github.com/klugjo/simon-game-react-flux#readme"
+}
