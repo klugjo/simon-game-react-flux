@@ -24,6 +24,7 @@
   "homepage": "https://github.com/klugjo/simon-game-react-flux#readme",
   "dependencies": {
     "flux": "^2.1.1",
+    "keymirror": "^0.1.1",
     "react": "^0.14.8",
     "react-dom": "^0.14.8"
   },

@@ -1,0 +1,29 @@
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80vw;
+    height: 80vh;
+}
+
+.card {
+    width: 40%;
+    height: 50%;
+    cursor: pointer;
+}
+
+.green {
+    background: green;
+}
+
+.red {
+    background: red;
+}
+
+.blue {
+    background: darkblue;
+}
+
+.yellow {
+    background: yellow;
+}
