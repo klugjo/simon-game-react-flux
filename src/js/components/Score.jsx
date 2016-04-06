@@ -9,9 +9,9 @@ export default class Score extends React.Component{
 
         console.log(this.props.gameState);
 
-        if (this.props.gameState.gameState === GameConstants.STATE.WIN) {
+        if (this.props.gameState.result === GameConstants.RESULT.WIN) {
             return "Congratulations, you won !";
-        } else if (this.props.gameState.gameState === GameConstants.STATE.LOSE) {
+        } else if (this.props.gameState.result === GameConstants.RESULT.LOSE) {
             return "You lost, try again";
         } else {
             return "";

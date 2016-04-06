@@ -10,6 +10,9 @@
     width: 40%;
     height: 50%;
     cursor: pointer;
+    -webkit-transition: background 0.2s ease-in-out;
+    -ms-transition:     background 0.2s ease-in-out;
+    transition:         background 0.2s ease-in-out;
 }
 
 .green {
@@ -27,3 +30,20 @@
 .yellow {
     background: yellow;
 }
+
+.green.highlight {
+    background: black;
+}
+
+.red.highlight {
+    background: black;
+}
+
+.blue.highlight {
+    background: black;
+}
+
+.yellow.highlight {
+    background: black;
+}
+

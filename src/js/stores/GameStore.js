@@ -7,8 +7,9 @@ var EventEmitter = events.EventEmitter;
 var CHANGE_EVENT = 'change';
 
 var _state = {
-    "sequence": [1,2,3,4],
-    "gameState": GameConstants.STATE.PLAYING
+    sequence: [],
+    gameState: GameConstants.STATE.STOPPED,
+    result: GameConstants.RESULT.PENDING
 };
 
 function pick(card) {
@@ -18,12 +19,27 @@ function pick(card) {
     if(_state.sequence.length && _state.sequence[0] === card) {
         _state.sequence.shift();
         if(_state.sequence.length < 1) {
-            _state.gameState = GameConstants.STATE.WIN;
+            _state.gameState = GameConstants.STATE.STOPPED;
+            _state.result = GameConstants.RESULT.WIN;
         }
     } else {
-        _state.gameState = GameConstants.STATE.LOSE;
-        _state.sequence = [1,2,3,4];
+        _state.gameState = GameConstants.STATE.STOPPED;
+        _state.result = GameConstants.RESULT.LOSE;
     }
+}
+
+function resetGame(sequence) {
+
+    _state = {
+        sequence: sequence,
+        gameState: GameConstants.STATE.DEMO
+    };
+    console.log(_state);
+}
+
+function startPlaying() {
+
+    _state.gameState = GameConstants.STATE.PLAYING;
 }
 
 var GameStore = Object.assign({}, EventEmitter.prototype, {
@@ -51,6 +67,16 @@ AppDispatcher.register((action) => {
 
         case GameConstants.ACTIONS.PICK:
             pick(action.context.card);
+            GameStore.emitChange();
+            break;
+
+        case GameConstants.ACTIONS.NEW_GAME:
+            resetGame(action.context.sequence);
+            GameStore.emitChange();
+            break;
+
+        case GameConstants.ACTIONS.START_PLAYING:
+            startPlaying();
             GameStore.emitChange();
             break;
 
